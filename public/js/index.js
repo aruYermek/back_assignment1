@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const path = require('path');  // Добавлено подключение модуля path
 const authRoutes = require('../../src/routes/authRoutes'); 
 
 const app = express();
@@ -10,9 +11,9 @@ app.use(bodyParser.json());
 app.use(session({ secret: '_secret_key', resave: false, saveUninitialized: true }));
 app.use(express.static('public'));
 
-
 app.get('/', (req, res) => {
-  res.sendFile(__dirname+ './public/register.html');
+  // Используйте path.join для создания абсолютного пути к файлу
+  res.sendFile(path.join(__dirname, 'public', 'register.html'));
 });
 
 app.use('/auth', authRoutes);
