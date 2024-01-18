@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const path = require('path');  // Добавлено подключение модуля path
+const path = require('path'); 
 const authRoutes = require('../../src/routes/authRoutes'); 
 
 const app = express();
