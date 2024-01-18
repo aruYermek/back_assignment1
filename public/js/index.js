@@ -12,7 +12,7 @@ app.use(session({ secret: '_secret_key', resave: false, saveUninitialized: true 
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  // Используйте path.join для создания абсолютного пути к файлу
+
   res.sendFile(path.join(__dirname, 'public', 'register.html'));
 });
 
